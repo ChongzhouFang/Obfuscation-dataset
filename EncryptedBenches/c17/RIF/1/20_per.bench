@@ -1,0 +1,18 @@
+# key=0
+INPUT(A1)
+INPUT(A2)
+INPUT(A3)
+INPUT(A6)
+INPUT(A7)
+INPUT(keyinput0)
+OUTPUT(A22)
+OUTPUT(A23)
+A10 = nand(A1, A3)
+A11 = nand(A3, A6)
+A16 = nand(A2, A11)
+A19 = nand(A11, A7$enc)
+A22 = nand(A10, A16)
+A23 = nand(A16, A19)
+A7$enc = xnor(keyinput0, A7$inv)
+A7$inv = not(A7)
+
